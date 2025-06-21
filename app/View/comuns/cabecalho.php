@@ -68,6 +68,7 @@ use Core\Library\Session;
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>uf">UF's</a></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>cidade">Cidade</a></li>
+                                    <li><a class="dropdown-item" href="<?= baseUrl() ?>evento">Eventos</a></li>
                                 </ul>
                             </li>
 

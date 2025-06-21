@@ -2,11 +2,11 @@
 
 namespace App\Controller;
 
-use App\Model\UfModel;
+use App\Model\EventoModel;
 use Core\Library\ControllerMain;
 use Core\Library\Redirect;
 
-class Cidade extends ControllerMain
+class Evento extends ControllerMain
 {
     public function __construct()
     {
@@ -21,19 +21,28 @@ class Cidade extends ControllerMain
      */
     public function index()
     {
-        return $this->loadView("sistema\listaCidade", $this->model->listaCidade());
+        return $this->loadView("sistema\listaEvento", $this->model->listaEvento());
     }
 
     public function form($action, $id)
     {
-        $UfModel = new UfModel();
+        $EventoModel = new EventoModel();
 
         $dados = [
-            'data' => $this->model->getById($id),               // Busca Cidade
-            'aUf' => $UfModel->lista("sigla")                   // Busca UFs a serem exibidas na combobox
-        ];
+            // 'data' => $this->model->getById($id),               // Busca Evento
+            // 'aUf' => $EventoModel->lista("sigla"),              // Busca UFs a serem exibidas na combobox
+            'data' => $this->model->getById($id), 
+            'nome' => $EventoModel->lista('nome'),
+            'cidade' => $EventoModel->lista('cidade'),
+            'uf' => $EventoModel->lista('sigla'),
+            'wiki' => $EventoModel->lista('wiki'),
+            'data_inicio' => $EventoModel->lista('data_inicio'),
+            'data_termino' => $EventoModel->lista('data_termino'),
+            'nome' => $EventoModel->lista('nome'),
+            'capacidade' => $EventoModel->lista(''),
+            'status' => $EventoModel->lista('')       ];
         
-        return $this->loadView("sistema/formCidade", $dados);
+        return $this->loadView("sistema/formEvento", $dados);
     }
 
     /**

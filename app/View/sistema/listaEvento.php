@@ -23,7 +23,7 @@
                     <tr>
                         <th scope="row"><?= $value['id'] ?></th>
                         <td><?= $value['nome'] ?></td>
-                        <td><?= $value['Cidade'] ?></td>
+                        <td><?= $value['cidade'] ?></td>
                         <td><?= $value['sigla'] ?></td>                
                         <td>
                             <?= buttons('view', $value['id'])  ?>
