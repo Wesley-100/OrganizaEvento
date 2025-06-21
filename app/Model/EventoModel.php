@@ -64,24 +64,19 @@ class EventoModel extends ModelMain
      * @return array
      */
     public function listaEvento()
-    {   
-        // return $this->db->select("
-        //                         eventos.id,
-        //                         eventos.nome,
-        //                         cidade.nome AS 'cidade',
-        //                         uf.sigla
-        //                     ")->join("cidade", "cidade.id = eventos.cidade_id")->join("uf", "uf.id = cidade.uf_id")->orderBy("eventos.data_inicio")->findAll();
+    {       
         return $this->db->select("
-                                eventos.id,
-                                eventos.nome,
+                                eventos.id AS 'id',
+                                eventos.nome AS 'nome',
                                 cidade.nome AS 'cidade',
-                                uf.sigla,
-                                eventos.wiki,
-                                eventos.data_inicio,
-                                eventos.data_termino,
-                                eventos.capacidade,
-                                eventos.status"
-                            )->join("cidade", "cidade.id = eventos.cidade_id")->join("uf", "uf.id = cidade.uf_id")->orderBy("eventos.data_inicio")->findAll();
+                                uf.id AS 'uf_id',
+                                uf.sigla AS 'sigla',
+                                eventos.wiki AS 'wiki',
+                                eventos.data_inicio AS 'data_inicio',
+                                eventos.data_termino AS 'data_termino',
+                                eventos.capacidade AS 'capacidade',
+                                eventos.status AS 'status'
+                                ")->join("cidade", "cidade.id = eventos.cidade_id")->join("uf", "uf.id = cidade.uf_id")->orderBy("eventos.data_inicio")->findAll();
     }
 
 }

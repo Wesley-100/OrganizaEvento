@@ -29,18 +29,17 @@ class Evento extends ControllerMain
         $EventoModel = new EventoModel();
 
         $dados = [
-            // 'data' => $this->model->getById($id),               // Busca Evento
-            // 'aUf' => $EventoModel->lista("sigla"),              // Busca UFs a serem exibidas na combobox
             'data' => $this->model->getById($id), 
             'nome' => $EventoModel->lista('nome'),
-            'cidade' => $EventoModel->lista('cidade'),
-            'uf' => $EventoModel->lista('sigla'),
+            'cidade' => $EventoModel->lista('nome'),
+            // 'uf' => $EventoModel->lista('sigla')
             'wiki' => $EventoModel->lista('wiki'),
             'data_inicio' => $EventoModel->lista('data_inicio'),
             'data_termino' => $EventoModel->lista('data_termino'),
             'nome' => $EventoModel->lista('nome'),
-            'capacidade' => $EventoModel->lista(''),
-            'status' => $EventoModel->lista('')       ];
+            'capacidade' => $EventoModel->lista('capacidade'),
+            'status' => $EventoModel->lista('status')       
+        ];
         
         return $this->loadView("sistema/formEvento", $dados);
     }
