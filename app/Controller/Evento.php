@@ -33,9 +33,7 @@ class Evento extends ControllerMain
         $dados = [
             'data' => $EventoModel->getById($id),
             'cidades' => $CidadeModel->listaCidade(),
-            // 'data' => $this->model->getById($id), 
             'nome' => $EventoModel->lista('nome'),
-            // 'uf' => $EventoModel->lista('sigla')
             'wiki' => $EventoModel->lista('wiki'),
             'data_inicio' => $EventoModel->lista('data_inicio'),
             'data_termino' => $EventoModel->lista('data_termino'),
@@ -43,9 +41,6 @@ class Evento extends ControllerMain
             'capacidade' => $EventoModel->lista('capacidade'),
             'status' => $EventoModel->lista('status')       
         ];
-        
-        // $dados['cidades'] = $CidadeModel->listaCidade();
-        // var_dump($dados['cidades']); exit;
 
         return $this->loadView("sistema/formEvento", $dados);
     }

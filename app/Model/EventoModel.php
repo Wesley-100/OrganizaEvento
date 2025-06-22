@@ -23,11 +23,11 @@ class EventoModel extends ModelMain
         ],
         "data_inicio" => [
             "label" => 'Data de Início',
-            "rules" => 'required|datetime'
+            "rules" => 'required|string'
         ],
         "data_termino" => [
             "label" => 'Data de Término',
-            "rules" => 'required|datetime'
+            "rules" => 'required|string'
         ],
         "capacidade" => [
             "label" => 'Capacidade',
@@ -36,14 +36,6 @@ class EventoModel extends ModelMain
         "status" => [
             "label" => 'Status',
             "rules" => 'required|int'
-        ],
-        "created_at" => [
-            "label" => 'Data de criação',
-            "rules" => 'required|datetime'
-        ],
-        "update_at" => [
-            "label" => 'Data de alteração',
-            "rules" => 'required|datetime'
         ],
     ];
 
@@ -72,7 +64,6 @@ class EventoModel extends ModelMain
             ->join("uf", "uf.id = cidade.uf_id")
             ->orderBy("eventos.data_inicio")
             ->findAll();
-
     }
-    
+
 }
