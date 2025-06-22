@@ -4,14 +4,17 @@
 
     <form method="POST" action="<?= $this->request->formAction() ?>">
 
+        <!-- ID oculto para edição -->
         <input type="hidden" name="id" id="id" value="<?= setValor("id") ?>">
 
+        <!-- Nome -->
         <div class="row">
             <div class="col-12 mb-3">
-                <label for="sigla" class="form-label">Nome do Evento</label>
-                <input type="text" class="form-control" 
-                    id="nome" 
-                    name="nome" 
+                <label for="nome" class="form-label">Nome do Evento</label>
+                <input type="text"
+                    class="form-control"
+                    id="nome"
+                    name="nome"
                     placeholder="Nome do Evento"
                     maxlength="50"
                     value="<?= setValor("nome") ?>"
@@ -21,59 +24,97 @@
             </div>
         </div>
 
+        <!-- ❸ Cidade (select) -->
         <div class="row">
-            <div class="col-12 mb-3">
-                <label for="sigla" class="form-label">Cidade</label>
-                <input type="text" class="form-control" 
-                    id="cidade" 
-                    name="cidade" 
-                    placeholder="Cidade"
-                    maxlength="50"
-                    value="<?= setValor("cidade") ?>"
-                    required
-                    autofocus>
-                <?= setMsgFilderError("cidade") ?>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-9 mb-3">
-                <label for="sigla" class="form-label">UF</label>
-                <select class="form-control" 
-                    id="sigla" 
-                    name="sigla" 
+            <div class="col-6 mb-3">
+                <label for="cidades" class="form-label">Cidade</label>
+                <select class="form-control"
+                    id="cidade_id"
+                    name="cidade_id"
                     required>
-                    <option value="">...</option>
-                    <?php foreach ($dados['uf'] as $value): ?>
-                        <option value="<?= $value['id'] ?>" <?= ($value['id'] == setValor("id") ? 'SELECTED' : '') ?>><?= $value['sigla']  . ' - '. $value['descricao'] ?></option>
-                    <?php endforeach; ?>
-                </select>
+                <option value="">...</option>
+                <?php foreach ($dados['cidades'] as $cidade): ?>
+                    <option value="<?= $cidade['id'] ?>"
+                            <?= ($cidade['id'] == setValor('cidade_id') ? 'selected' : '') ?>>
+                        <?= $cidade['nome'] ?> - <?= $cidade['sigla'] ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
+
                 <?= setMsgFilderError("id") ?>
             </div>
         </div>
 
+        <!-- ❹ Datas -->
+        <div class="row">
+            <div class="col-3 mb-3">
+                <label for="data_inicio" class="form-label">Data de Início</label>
+                <input type="date"
+                    class="form-control"
+                    id="data_inicio"
+                    name="data_inicio"
+                    value="<?= setValor('data_inicio') ?>"
+                    required>
+                <?= setMsgFilderError("data_inicio") ?>
+            </div>
+
+            <div class="col-3 mb-3">
+                <label for="data_termino" class="form-label">Data de Término</label>
+                <input type="date"
+                    class="form-control"
+                    id="data_termino"
+                    name="data_termino"
+                    value="<?= setValor('data_termino') ?>"
+                    required>
+                <?= setMsgFilderError("data_termino") ?>
+            </div>
+        </div>
+
+        <!-- ❺ Capacidade -->
+        <div class="row">
+            <div class="col-3 mb-3">
+                <label for="capacidade" class="form-label">Capacidade (pessoas)</label>
+                <input type="number"
+                    class="form-control"
+                    id="capacidade"
+                    name="capacidade"
+                    min="1"
+                    step="1"
+                    value="<?= setValor('capacidade') ?>"
+                    required>
+                <?= setMsgFilderError("capacidade") ?>
+            </div>
+        </div>
+
+        <!-- ❻ Wiki / Descrição -->
         <div class="row">
             <div class="col-12 mb-3">
-                <label for="codIBGE" class="form-label">Wiki sobre a cidade</label>
-                <textarea class="form-control" id="wiki" name="wiki"><?= setValor("wiki") ?></textarea>
+                <label for="wiki" class="form-label">Descrição / Wiki</label>
+                <textarea class="form-control"
+                        id="wiki"
+                        name="wiki"><?= setValor("wiki") ?></textarea>
                 <?= setMsgFilderError("wiki") ?>
             </div>
         </div>
-        
+
+        <!-- ❼ Status (1 ou 2) -->
+        <div class="row">
+            <div class="col-3 mb-3">
+                <label for="status" class="form-label">Status</label>
+                <select class="form-control"
+                        id="status"
+                        name="status"
+                        required>
+                    <option value="">...</option>
+                    <option value="1" <?= (setValor('status') == 1 ? 'selected' : '') ?>>Ativo</option>
+                    <option value="2" <?= (setValor('status') == 2 ? 'selected' : '') ?>>Inativo</option>
+                </select>
+                <?= setMsgFilderError("status") ?>
+            </div>
+        </div>
+
         <?= formButton() ?>
 
     </form>
 
 </div>
-
-<script src="<?= baseUrl() ?>assets/ckeditor5/ckeditor5-build-classic/ckeditor.js"></script>
-
-<script type="text/javascript">
-
-    ClassicEditor
-        .create(document.querySelector('#wiki'))
-        .catch( error => {
-            console.error(error);
-        });
-
-</script>

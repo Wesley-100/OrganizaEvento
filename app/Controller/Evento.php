@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Model\CidadeModel;
 use App\Model\EventoModel;
 use Core\Library\ControllerMain;
 use Core\Library\Redirect;
@@ -27,11 +28,13 @@ class Evento extends ControllerMain
     public function form($action, $id)
     {
         $EventoModel = new EventoModel();
+        $CidadeModel = new CidadeModel();
 
         $dados = [
-            'data' => $this->model->getById($id), 
+            'data' => $EventoModel->getById($id),
+            'cidades' => $CidadeModel->listaCidade(),
+            // 'data' => $this->model->getById($id), 
             'nome' => $EventoModel->lista('nome'),
-            'cidade' => $EventoModel->lista('nome'),
             // 'uf' => $EventoModel->lista('sigla')
             'wiki' => $EventoModel->lista('wiki'),
             'data_inicio' => $EventoModel->lista('data_inicio'),
@@ -41,6 +44,9 @@ class Evento extends ControllerMain
             'status' => $EventoModel->lista('status')       
         ];
         
+        // $dados['cidades'] = $CidadeModel->listaCidade();
+        // var_dump($dados['cidades']); exit;
+
         return $this->loadView("sistema/formEvento", $dados);
     }
 
