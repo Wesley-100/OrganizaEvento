@@ -6,7 +6,7 @@ use App\Model\CidadeModel;
 use App\Model\EventoModel;
 use Core\Library\ControllerMain;
 use Core\Library\Redirect;
-
+use \DateTime;
 class Evento extends ControllerMain
 {
     public function __construct()

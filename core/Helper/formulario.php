@@ -22,6 +22,29 @@ if (! function_exists('setValor')) {
 
 }
 
+
+/**
+ * Formata Data
+ *
+ * @param [date] $dataIso
+ * @return $dataIso
+ */ 
+function formataDataIso($dataCompleta)
+{
+    if (empty($dataCompleta)) return null;
+
+    // Tenta com hora
+    $data = DateTime::createFromFormat('Y-m-d H:i:s', $dataCompleta);
+    if (!$data) {
+        // Tenta só com data
+        $data = DateTime::createFromFormat('Y-m-d', $dataCompleta);
+    }
+
+    return $data ? $data->format('Y-m-d') : null;
+}
+
+
+
 if (! function_exists('setMsgFilderError')) {
     /**
      * setMsgFilderError

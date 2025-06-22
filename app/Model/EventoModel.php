@@ -2,6 +2,7 @@
 
 namespace App\Model;
 
+use \DateTime;
 use Core\Library\ModelMain;
 
 class EventoModel extends ModelMain
