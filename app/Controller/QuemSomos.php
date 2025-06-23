@@ -7,12 +7,17 @@ use Core\Library\ControllerMain;
 use Core\Library\Redirect;
 use Core\Library\Files;
 use Core\Library\Validator;
+use Core\Library\Session;
 class QuemSomos extends ControllerMain
 {
+    protected $files;
+
+
     public function __construct()
     {
         $this->auxiliarconstruct();
         $this->loadHelper('formHelper');
+        $this->files = new Files();
     }
 
     /**
