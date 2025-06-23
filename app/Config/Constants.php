@@ -10,7 +10,7 @@ defined('DEFAULT_METODO') || define("DEFAULT_METODO", 'index');
 defined('CONTROLLER_AUTH') || define('CONTROLLER_AUTH', [
     "Home",
     "Login",
-    "QuemSomos",
+    "quemsomos",
     "Produtos",
 ]);
 

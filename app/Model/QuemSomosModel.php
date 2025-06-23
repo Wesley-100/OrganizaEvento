@@ -34,7 +34,9 @@ class QuemSomosModel extends ModelMain
         return $this->db->select("
                 id,
                 titulo,
-                status
+                status,
+                texto,
+                imagem
             ")
             ->orderBy("id", "DESC")
             ->findAll();

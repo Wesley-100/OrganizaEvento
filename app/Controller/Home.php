@@ -31,4 +31,11 @@ class Home extends ControllerMain
         echo "<br />ID: " . $id;
         echo "<br />PARÂMETROS: " . implode(", ", $params);
     }
+
+    public function quemSomos()
+    {
+        $quemSomosModel = new \App\Model\QuemSomosModel();
+        $dados = $quemSomosModel->listaQuemSomos();
+        return $this->loadView("quemsomos", ['dados' => $dados]);
+    }
 }
