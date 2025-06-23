@@ -14,7 +14,7 @@
     ],
     "require": {
         "phpmailer/phpmailer": "^6.9.2",
-        "firebase/php-jwt": "^6.11"        
+        "firebase/php-jwt": "^5.5"        
     },
     "desativado": {
         "aldecirfonseca/atomphp": "*"

@@ -1,5 +1,9 @@
 <?= formTitulo("Lista quem somos", true) ?>
+<?php
+use Core\Library\Session;
+$aStatus = ["1" => "Ativo", "2" => "Inativo", "3" => "Bloqueado"];
 
+?>
 <?php if (count($dados) > 0): ?>
 
     <div class="m-2">
@@ -18,7 +22,7 @@
                     <tr>
                         <th scope="row"><?= $value['id'] ?></th>
                         <td><?= $value['titulo'] ?></td>
-                        <td><?= $value['statusRegistro'] ?></td>
+                        <td><?= $aStatus[$value['statusRegistro']] ?></td>
                         <td>
                             <?= buttons('view', $value['id'])  ?>
                             <?= buttons('update', $value['id'])  ?>
