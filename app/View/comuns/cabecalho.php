@@ -46,7 +46,7 @@ use Core\Library\Session;
                             <a class="nav-link active" aria-current="page" href="<?= baseUrl() ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Quem Somos</a>
+                            <a class="nav-link" href="<?= baseUrl() ?>quemsomos">Quem Somos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= baseUrl() ?>Home/produtos">Produtos/Serviços</a>
@@ -67,6 +67,7 @@ use Core\Library\Session;
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>Usuario/formTrocarSenha">Trocar a Senha</a></li>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>uf">UF's</a></li>
+                                    <li><a class="dropdown-item" href="<?= baseUrl() ?>quemsomos">Quem Somos</a></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>cidade">Cidade</a></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>evento">Eventos</a></li>
                                 </ul>
