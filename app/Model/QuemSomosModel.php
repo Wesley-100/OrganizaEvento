@@ -31,7 +31,7 @@ class QuemSomosModel extends ModelMain
      */
     public function listaQuemSomos()
     {
-         return $this->db->select("
+        return $this->db->select("
                 id,
                 titulo,
                 statusRegistro
