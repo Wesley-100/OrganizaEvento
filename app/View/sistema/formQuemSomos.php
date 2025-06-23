@@ -23,6 +23,8 @@
             <?= setMsgFilderError('statusRegistro') ?>
         </div>
 
+        
+
         <div class="row">
             <div class="col-12 mt-3 mb-3">
                 <label for="textoQuem" class="form-label">Informe detalhes de quem somos</label>
