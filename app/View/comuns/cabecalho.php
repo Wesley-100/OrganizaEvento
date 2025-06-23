@@ -2,6 +2,8 @@
 
 use Core\Library\Session;
 
+$nivelUsuario = (int)Session::get("userNivel");
+
 ?>
 
 <!DOCTYPE html>
@@ -60,15 +62,17 @@ use Core\Library\Session;
                                 </a>
                                 <ul class="dropdown-menu">
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>login/signOut">Sair</a></li>
-                                    <?php if ((int)Session::get("userNivel") <= 20): ?>
+                                    <?php if ($nivelUsuario <= 20): ?>
                                         <li><a class="dropdown-item" href="<?= baseUrl() ?>usuario">Usuario</a></li>
                                     <?php endif; ?>                
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>Usuario/formTrocarSenha">Trocar a Senha</a></li>
+                                    <?php if($nivelUsuario <= 20): ?>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>uf">UF's</a></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>cidade">Cidade</a></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>evento">Eventos</a></li>
+                                    <?php endif; ?>
                                 </ul>
                             </li>
 
