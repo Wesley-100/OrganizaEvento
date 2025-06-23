@@ -22,7 +22,7 @@ $aStatus = ["1" => "Ativo", "2" => "Inativo", "3" => "Bloqueado"];
                     <tr>
                         <th scope="row"><?= $value['id'] ?></th>
                         <td><?= $value['titulo'] ?></td>
-                        <td><?= $aStatus[$value['statusRegistro']] ?></td>
+                        <td><?= $aStatus[$value['status']] ?></td>
                         <td>
                             <?= buttons('view', $value['id'])  ?>
                             <?= buttons('update', $value['id'])  ?>
