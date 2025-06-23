@@ -48,7 +48,7 @@ $nivelUsuario = (int)Session::get("userNivel");
                             <a class="nav-link active" aria-current="page" href="<?= baseUrl() ?>">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= baseUrl() ?>quemsomos">Quem Somos</a>
+                            <a class="nav-link" href="<?= baseUrl() ?>quemsomoshome">Quem Somos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= baseUrl() ?>produtos">Produtos/Serviços</a>

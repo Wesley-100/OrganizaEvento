@@ -20,6 +20,6 @@ class Produtos extends ControllerMain
     public function index()
     {
         // Usa diretamente a propriedade instanciada
-        return $this->loadView("sistema/listaProduto", $this->produtoModel->listaProdutos());
+        return $this->loadView("Produtos", $this->produtoModel->listaProdutos());
     }
 }

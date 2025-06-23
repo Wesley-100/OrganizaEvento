@@ -59,30 +59,26 @@ class QuemSomos extends ControllerMain
             return Redirect::page($this->controller . "/form/insert/0");
         } else {
 
-            // faz upload da imagem
-
-            if (!empty($_FILES['imagem']['name'])) { 
-                
-                // Faz upload da imagem
-                $nomeRetornado = $this->files->upload($_FILES, 'imagem'); // 'imagem1' é o nome do diretório onde a imagem será salva
-
-                // se for boolean, significa que o upload falhou
+            // Faz upload da imagem
+            if (!empty($_FILES['imagem']['name'])) {
+                $nomeRetornado = $this->files->upload($_FILES, 'quemsomos');
                 if (is_bool($nomeRetornado)) {
                     Session::set('inputs', $post);
                     return Redirect::page($this->controller . "/form/insert/" . $post['id']);
                 } else {
-                    $post['imagem'] = $nomeRetornado[0]; // o nome da imagem retornado pelo upload
+                    $post['imagem'] = $nomeRetornado[0];
                 }
             } else {
-                $post['imagem'] = $post['nomeImagem']; // se não houver imagem, mantém o nome da imagem já existente
+                $post['imagem'] = $post['nomeImagem'] ?? null;
             }
+            
 
-        if ($this->model->insert($post)) {
-            return Redirect::page($this->controller, ["msgSucesso" => "Registro inserido com sucesso."]);
-        } else {
-            return Redirect::page($this->controller . "/form/insert/0");
+            if ($this->model->insert($post)) {
+                return Redirect::page($this->controller, ["msgSucesso" => "Registro inserido com sucesso."]);
+            } else {
+                return Redirect::page($this->controller . "/form/insert/0");
+            }
         }
-    }
     }
 
     /**
@@ -95,39 +91,32 @@ class QuemSomos extends ControllerMain
         $post = $this->request->getPost();
 
         if (Validator::make($post, $this->model->validationRules)) {
-            return Redirect::page($this->controller . "/form/update/" . $post['id']);    // error
+            return Redirect::page($this->controller . "/form/update/" . $post['id']);
         } else {
 
             if (!empty($_FILES['imagem']['name'])) {
-
-                // Faz uploado da imagem
-                $nomeRetornado = $this->files->upload($_FILES, 'imagem');
-
-                // se for boolean, significa que o upload falhou
+                $nomeRetornado = $this->files->upload($_FILES, 'quemsomos');
                 if (is_bool($nomeRetornado)) {
-                    Session::set( 'inputs', $post);
+                    Session::set('inputs', $post);
                     return Redirect::page($this->controller . "/form/update/" . $post['id']);
                 } else {
                     $post['imagem'] = $nomeRetornado[0];
                 }
-                
                 if (isset($post['nomeImagem'])) {
-                    $this->files->delete($post['nomeImagem'], 'imagem');
+                    $this->files->delete($post['nomeImagem'], 'quemsomos');
                 }
-                
             } else {
-                $post['imagem'] = $post['nomeImagem'];
+                $post['imagem'] = $post['nomeImagem'] ?? null;
             }
 
-            //
             unset($post['nomeImagem']);
 
-        if ($this->model->update($post)) {
-            return Redirect::page($this->controller, ["msgSucesso" => "Registro alterado com sucesso."]);
-        } else {
-            return Redirect::page($this->controller . "/form/update/" . $post['id']);
+            if ($this->model->update($post)) {
+                return Redirect::page($this->controller, ["msgSucesso" => "Registro alterado com sucesso."]);
+            } else {
+                return Redirect::page($this->controller . "/form/update/" . $post['id']);
+            }
         }
-    }
     }
 
     /**
