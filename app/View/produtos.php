@@ -12,7 +12,7 @@ $eventosPassados = array_filter($registros, fn($v) => $v['status'] != 1);
             <?php foreach ($eventosAtivos as $value): ?>
                 <div class="col-md-4 mb-3">
                     <div class="card h-100">
-                        <div class="w-100 d-flex justify-content-center align-items-center" style="min-height:200px;">
+                        <div class="w-100 d-flex justify-content-center align-items-center mt-5" style="min-height:200px;">
                             <?php if (!empty($value['imagem'])): ?>
                                 <img src="<?= baseUrl() . 'imagem.php?file=imagem/' . urlencode($value['imagem']) ?>"
                                     alt="Imagem do evento"
