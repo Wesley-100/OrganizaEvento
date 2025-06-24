@@ -14,7 +14,7 @@ $nivelUsuario = (int)Session::get("userNivel");
         <meta name="description" content="AtomPHP, microframework">
         <meta name="autho" content="Aldecir fonseca">
 
-        <title>AtomPHP | FASM 2025</title>
+        <title>OrganizaEventos | FASM 2025</title>
 
         <link href="<?= baseUrl() ?>assets/img/organiza-icone.png" rel="icon" type="image/png">
         
