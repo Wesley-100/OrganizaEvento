@@ -37,7 +37,7 @@ $eventosAtivos = array_filter($registros, fn($v) => $v['status'] == 1);
                                         <small>
                                             <b>Início:</b> <?= date('d/m/Y', strtotime($evento['data_inicio'])) ?> |
                                             <b>Fim:</b> <?= date('d/m/Y', strtotime($evento['data_termino'])) ?> |
-                                            <b>Capacidade:</b> <?= $evento['capacidade'] ?>
+                                            <b>Capacidade:</b> <?= $evento['capacidade'] ?> pessoas
                                         </small>
                                     </div>
                                 </div>

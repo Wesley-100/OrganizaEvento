@@ -27,7 +27,7 @@ $eventosPassados = array_filter($registros, fn($v) => $v['status'] != 1);
                         <ul class="list-group list-group-flush text-center">
                             <li class="list-group-item"><b>Início:</b> <?= date('d/m/Y', strtotime($value['data_inicio'])) ?></li>
                             <li class="list-group-item"><b>Fim:</b> <?= date('d/m/Y', strtotime($value['data_termino'])) ?></li>
-                            <li class="list-group-item"><b>Capacidade:</b> <?= $value['capacidade'] ?></li>
+                            <li class="list-group-item"><b>Capacidade:</b> <?= $value['capacidade'] ?> pessoas</li>
                         </ul>
                     </div>
                 </div>
