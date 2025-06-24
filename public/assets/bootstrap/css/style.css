@@ -91,22 +91,24 @@ p, span, a, li, label {
 }
 
 .carousel-legenda {
-    background: rgba(30, 33, 37, 0.85);
-    color: #fff;
-    border-radius: 12px;
+    background: none !important;   /* Remove o fundo */
+    color: #222 !important;        /* Fonte preta */
+    border-radius: 0;
+    box-shadow: none;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
     padding: 18px 32px;
     margin-top: 10px;
     width: 90%;
     max-width: 600px;
     text-align: center;
-    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
-    min-height: 120px;
+    min-height: 0;
 }
 .carousel-legenda h5,
 .carousel-legenda p,
 .carousel-legenda small,
 .carousel-legenda b {
-    color: #fff !important;
+    color: #222 !important;        /* Garante texto preto */
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
 }
 
 /* Deixa as setas do carrossel mais visíveis */
@@ -165,4 +167,5 @@ p, span, a, li, label {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
     background-size: 100% 100%;
 }
+
 
