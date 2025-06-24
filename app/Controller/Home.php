@@ -40,4 +40,11 @@ class Home extends ControllerMain
         $dados = $quemSomosModel->listaQuemSomos();
         return $this->loadView("quemsomos", ['dados' => $dados]);
     }
+
+    public function faleconosco()
+    {
+        // Você pode passar variáveis para a view se quiser
+        $dados = [];
+        return $this->loadView('faleconosco', $dados);
+    }
 }
