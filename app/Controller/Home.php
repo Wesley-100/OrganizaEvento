@@ -9,7 +9,9 @@ class Home extends ControllerMain
 {
     public function index()
     {
-        $this->loadView("home");
+        $EventoModel = new \App\Model\EventoModel();
+        $dados = $EventoModel->listaEvento();
+        return $this->loadView("home", ['dados' => $dados]);
     }
 
     public function sobre($action = null)

@@ -66,3 +66,103 @@ p, span, a, li, label {
 .btn-outline-info.text-white i {
     color: #222 !important;
 }
+
+/* Ajuste para a legenda do carrossel de eventos */
+.carousel-caption {
+    background: rgba(30, 33, 37, 0.85) !important; /* Fundo escuro com transparência */
+    color: #fff !important;                        /* Texto branco */
+    border-radius: 12px;    
+    padding: 18px 32px;
+    left: 50%;
+    right: auto;
+    bottom: 20px;
+    transform: translateX(-50%);
+    width: 90%; 
+    max-width: 600px;   
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+}
+
+.carousel-caption h5,
+.carousel-caption p,
+.carousel-caption small,
+.carousel-caption b {
+    color: #fff !important; /* Garante texto branco em todos os elementos da legenda */
+}
+
+.carousel-legenda {
+    background: rgba(30, 33, 37, 0.85);
+    color: #fff;
+    border-radius: 12px;
+    padding: 18px 32px;
+    margin-top: 10px;
+    width: 90%;
+    max-width: 600px;
+    text-align: center;
+    box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+    min-height: 120px;
+}
+.carousel-legenda h5,
+.carousel-legenda p,
+.carousel-legenda small,
+.carousel-legenda b {
+    color: #fff !important;
+}
+
+/* Deixa as setas do carrossel mais visíveis */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: #222 !important; /* Cor de fundo escura */
+    border-radius: 50%;
+    opacity: 1 !important;             /* Remove transparência */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    opacity: 1 !important; /* Remove transparência do botão inteiro */
+}
+
+.carousel-inner {
+    width: 100%;
+}
+
+.carousel-item .row {
+    width: 100%;
+    margin: 0;
+}
+
+.carousel-item .col-md-4 {
+    flex: 0 0 33.3333%;
+    max-width: 33.3333%;
+    padding-left: 16px;
+    padding-right: 16px;
+    display: flex;
+    justify-content: center;
+}
+
+@media (max-width: 991px) {
+    .carousel-item .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.navbar-toggler {
+    border: none;
+    background: #bbbfc4 !important;
+    border-radius: 8px;
+    padding: 8px 12px;
+    transition: background 0.2s;
+}
+.navbar-toggler:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #0056b3;
+}
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255,255,255,1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-size: 100% 100%;
+}
+
