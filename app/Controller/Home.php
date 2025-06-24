@@ -19,9 +19,9 @@ class Home extends ControllerMain
 
     public function produtos()
     {
-        $PessoaModel = $this->loadModel("Pessoa");
-
-        return $this->loadView("produtos", $PessoaModel->lista("nome"));
+        $EventoModel = new \App\Model\EventoModel();
+        $dados = $EventoModel->listaEvento(); // ou o método correto para listar produtos/eventos
+        return $this->loadView("produtos", ['dados' => $dados]);
     }
 
     public function detalhes($action = null, $id = null, ...$params)

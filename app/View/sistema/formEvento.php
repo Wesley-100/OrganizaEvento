@@ -1,7 +1,7 @@
 <?= formTitulo("Evento") ?>
 
 <div class="m-2">
-    <form method="POST" action="<?= $this->request->formAction() ?>">
+    <form method="POST" action="<?= $this->request->formAction() ?>" enctype="multipart/form-data">
 
         <input type="hidden" name="id" id="id" value="<?= setValor("id") ?>">
 
@@ -72,6 +72,24 @@
                 <?= setMsgFilderError("wiki") ?>
             </div>
         </div>
+
+        <div class="row">
+                <?php if (in_array($this->request->getAction(), ['insert', 'update'])): ?>
+                    <div class="mb-3 col-12">
+                        <label for="imagem" class="form-label">Imagem</label>
+                        <input type="file" class="form-control" id="imagem" name="imagem" placeholder="Anexar a Imagem" maxlength="100" value="<?= setValor('imagem') ?>">
+                        <?= setMsgFilderError('imagem') ?>
+                    </div>
+                <?php endif; ?>
+
+                <?php if (trim(setValor("imagem")) != ""): ?>
+                    <div class="mb-3 col-12">
+                        <h5>Imagem</h5>
+                        <img src="<?= baseUrl() . 'imagem.php?file=imagem/' . setValor("imagem") ?>" class="img-thumbnail" height="120" width="240" alt="imagem">
+                        <input type="hidden" name="nomeImagem" id="nomeImagem" value="<?= setValor("imagem") ?>">
+                    </div>
+                <?php endif; ?>
+            </div>
 
         <?= formButton() ?>
     </form>

@@ -59,7 +59,8 @@ class EventoModel extends ModelMain
             eventos.data_inicio     AS data_inicio,
             eventos.data_termino    AS data_termino,
             eventos.capacidade      AS capacidade,
-            eventos.status          AS status
+            eventos.status          AS status,
+            eventos.imagem          AS imagem
             ")
             ->join("cidade", "cidade.id = eventos.cidade_id")
             ->join("uf", "uf.id = cidade.uf_id")
