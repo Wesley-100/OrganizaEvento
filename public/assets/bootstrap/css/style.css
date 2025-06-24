@@ -114,10 +114,10 @@ p, span, a, li, label {
 /* Deixa as setas do carrossel mais visíveis */
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
-    background-color: #222 !important; /* Cor de fundo escura */
+    background-color: #d4d1d1 !important; /* Cor de fundo escura */
     border-radius: 50%;
     opacity: 1 !important;             /* Remove transparência */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 8px rgba(135, 133, 133, 0.2);
 }
 
 .carousel-control-prev,
