@@ -298,9 +298,9 @@ class Login extends ControllerMain
     {
         $dados = [
             "nivel"             => 1,
-            "nome"              => "Aldecir Fonseca",
-            "email"             => "aldecir.fonseca@santamarcelina.edu.br",
-            "senha"             => password_hash("fasm@2025", PASSWORD_DEFAULT),
+            "nome"              => "Super User",
+            "email"             => "admin@orgnizaeventos.com.br",
+            "senha"             => password_hash("admin@2025", PASSWORD_DEFAULT),
             "statusRegistro"    => 1
         ];
 

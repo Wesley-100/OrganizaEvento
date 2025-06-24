@@ -33,6 +33,7 @@ CREATE TABLE IF NOT EXISTS `cidade` (
 ) ENGINE=InnoDB AUTO_INCREMENT=196 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela organizaevento.cidade: ~192 rows (aproximadamente)
+DELETE FROM `cidade`;
 INSERT INTO `cidade` (`id`, `nome`, `uf_id`, `codIBGE`, `wiki`) VALUES
 	(4, 'Vitória da Conquista', 16, '9999999', '<p>Testestetsteste</p>'),
 	(5, 'Belo Horizonte', 16, '3106200', 'Teste'),
@@ -246,6 +247,7 @@ CREATE TABLE IF NOT EXISTS `eventos` (
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Copiando dados para a tabela organizaevento.eventos: ~6 rows (aproximadamente)
+DELETE FROM `eventos`;
 INSERT INTO `eventos` (`id`, `nome`, `wiki`, `data_inicio`, `data_termino`, `cidade_id`, `capacidade`, `status`, `created_at`, `updated_at`, `imagem`) VALUES
 	(2, 'Show Gustavo Lima', 'Venha pro show Gustavo Lima!! ', '2028-10-12 00:00:00', '2028-10-12 00:00:00', 195, 100, 1, '2025-06-22 18:31:18', '2025-06-24 18:33:12', '685a2bd9d06ef_GL.png'),
 	(3, 'Festival do Torresmo', 'Venha participar do maior evento de torresmo do Triangulo Mineiro!', '2025-06-27 00:00:00', '2025-06-30 00:00:00', 195, 1000, 1, '2025-06-23 00:33:44', '2025-06-24 01:40:17', '685a2c318c7eb_FT.png'),
@@ -266,6 +268,7 @@ CREATE TABLE IF NOT EXISTS `pessoa` (
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela organizaevento.pessoa: ~0 rows (aproximadamente)
+DELETE FROM `pessoa`;
 
 -- Copiando estrutura para tabela organizaevento.quemsomos
 CREATE TABLE IF NOT EXISTS `quemsomos` (
@@ -277,9 +280,10 @@ CREATE TABLE IF NOT EXISTS `quemsomos` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela organizaevento.quemsomos: ~0 rows (aproximadamente)
+-- Copiando dados para a tabela organizaevento.quemsomos: ~1 rows (aproximadamente)
+DELETE FROM `quemsomos`;
 INSERT INTO `quemsomos` (`id`, `titulo`, `texto`, `imagem`, `status`) VALUES
-	(3, 'OrganizaEventos', '<p>O sistema web proposto será projetado para tornar o processo de vendas e acompanhamento de pedidos mais eficiente, possibilitando a atualização e o gerenciamento de clientes e fornecedores. Essa estrutura permitirá que o representante comercial ofereça uma comunicação mais rápida e precisa, com menos dependência de interações presenciais e mais autonomia. Dessa forma, o sistema web reforça a posição da empresa como uma facilitadora do desenvolvimento econômico local, com potencial para ampliar o alcance dos produtos regionais.</p>', '685a2ca38bfd9_OE_QS.png', 1);
+	(3, 'OrganizaEventos', '<p>O <strong>OrganizaEvento</strong> nasceu com o propósito de transformar a maneira como eventos são planejados, organizados e executados. Seja uma festa particular, uma reunião corporativa, um casamento ou um grande congresso, nossa missão é facilitar cada etapa do processo, centralizando todas as informações em um só lugar.</p><p>Nosso programa foi desenvolvido para oferecer praticidade, controle e eficiência na gestão de eventos, atendendo desde organizadores independentes até empresas especializadas. Com uma interface intuitiva e recursos inteligentes, o OrganizaEvento permite o gerenciamento de convidados, fornecedores, orçamentos, cronogramas e muito mais, de forma simples e organizada.</p><p>Acreditamos que <strong>cada evento é único</strong>, e por isso criamos uma plataforma flexível, adaptável às mais diversas necessidades e estilos. Estamos aqui para ajudar você a tirar do papel qualquer tipo de evento, com profissionalismo, agilidade e, acima de tudo, paixão pelo que fazemos.</p>', '685a2ca38bfd9_OE_QS.png', 1);
 
 -- Copiando estrutura para tabela organizaevento.uf
 CREATE TABLE IF NOT EXISTS `uf` (
@@ -292,6 +296,7 @@ CREATE TABLE IF NOT EXISTS `uf` (
 ) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=latin1;
 
 -- Copiando dados para a tabela organizaevento.uf: ~26 rows (aproximadamente)
+DELETE FROM `uf`;
 INSERT INTO `uf` (`id`, `sigla`, `descricao`, `bandeira`) VALUES
 	(16, 'MG', 'Minas Gerais', NULL),
 	(17, 'AC', 'Acre', '6859bbd43b325_Captura de tela 2024-11-06 190625.png'),
@@ -331,7 +336,8 @@ CREATE TABLE IF NOT EXISTS `usuario` (
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 
--- Copiando dados para a tabela organizaevento.usuario: ~4 rows (aproximadamente)
+-- Copiando dados para a tabela organizaevento.usuario: ~5 rows (aproximadamente)
+DELETE FROM `usuario`;
 INSERT INTO `usuario` (`id`, `nivel`, `nome`, `email`, `senha`, `statusRegistro`) VALUES
 	(3, 11, 'Aldecir Fonseca', 'aldecir.fonseca@santamarcelina.edu.br', '$2y$10$mlPPED/FG69toevovFGiNOXKDhyxAQyZJ0B.B3n.TeH8Zd018nNdW', 1),
 	(4, 1, 'Admin', 'admin@atomphp.com.br', 'admin', 1),
@@ -354,6 +360,7 @@ CREATE TABLE IF NOT EXISTS `usuariorecuperasenha` (
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 -- Copiando dados para a tabela organizaevento.usuariorecuperasenha: ~0 rows (aproximadamente)
+DELETE FROM `usuariorecuperasenha`;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
