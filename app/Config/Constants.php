@@ -12,6 +12,7 @@ defined('CONTROLLER_AUTH') || define('CONTROLLER_AUTH', [
     "Login",
     "quemsomos",
     "Produtos",
+    "Faleconosco",
 ]);
 
 // Definir o time_zone_default
