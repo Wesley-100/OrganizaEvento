@@ -59,7 +59,7 @@ $nivelUsuario = (int)Session::get("userNivel");
                             <a class="nav-link" href="<?= baseUrl() ?>home/produtos">Produtos/Serviços</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= baseUrl() ?>home/faleconosco">Fale Conosco</a>
+                            <a class="nav-link" href="<?= baseUrl() ?>faleconosco">Fale Conosco</a>
                         </li>
 
                         <?php if (Session::get("userId")): ?>
