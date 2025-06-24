@@ -16,10 +16,11 @@ $nivelUsuario = (int)Session::get("userNivel");
 
         <title>AtomPHP | FASM 2025</title>
 
-        <link href="<?= baseUrl() ?>assets/img/AtomPHP-icone.png" rel="icon" type="image/png">
+        <link href="<?= baseUrl() ?>assets/img/organiza-icone.png" rel="icon" type="image/png">
         
         <link rel="stylesheet" href="<?= baseUrl() ?>/assets/bootstrap/css/style.css">
         <link href="<?= baseUrl() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="<?= baseUrl() ?>assets/bootstrap/css/style.css">
         
 
         <!-- Fontawesome -->
@@ -36,11 +37,11 @@ $nivelUsuario = (int)Session::get("userNivel");
 
     </head>
     <body>
-        <header class="container-fluid">
-
+        <header class="header_area">
+        <div class="main_menu">
             <nav class="navbar navbar-expand-lg bg-body-tertiary">
                 <div class="container-fluid">
-                    <a class="navbar-brand" href="<?= baseUrl() ?>"><img class="login-img" src="/assets/img/AtomPHP-logo.png" alt="" height="90" width="90"></a>
+                    <a class="navbar-brand" href="<?= baseUrl() ?>"><img class="login-img" src="/assets/img/organiza-icone.png" alt="" height="90" width="90"></a>
                         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
                     </button>
@@ -91,6 +92,7 @@ $nivelUsuario = (int)Session::get("userNivel");
                     </div>
                 </div>
                 </nav>
+        </div>
         </header>
         
         <main class="container">

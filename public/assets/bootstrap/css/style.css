@@ -1,0 +1,68 @@
+body {
+    background-color: #f4f6f9; /* Suave para o fundo */
+    font-family: 'Open Sans', sans-serif;
+    color: #111 !important; /* Deixa o texto preto */
+    padding: 15px; /* Ajuste de espaçamento global */
+    margin: 0px;
+    height: 25px;
+}
+
+.nav-tabs .nav-link.active {
+    background-color: #007bff !important; /* Mantém a aba ativa azul */
+    color: white !important;
+}
+
+.main_menu {
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 50;
+    box-shadow: 0px 3px 16px 0px rgba(0,0,0,0.1);
+    background: #f4f6f9; /* Mesma cor do body */
+    transition: background 500ms ease;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+
+.header_area.navbar_fixed .main_menu .navbar{background:#1e5f8a}.header_area.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link{line-height:20px}.header_area.navbar_fixed .main_menu .navbar .nav .nav-item:hover .nav-link,.header_area.navbar_fixed .main_menu .navbar .nav .nav-item.active .nav-link{color:#fff}@media (min-width: 992px){.header_area.white_menu .navbar .navbar-brand img{display:none}.header_area.white_menu .navbar .navbar-brand img+img{display:inline-block}}@media (max-width: 991px){.header_area.white_menu .navbar .navbar-brand img{display:inline-block}.header_area.white_menu .navbar .navbar-brand img+img{display:none}}.header_area.white_menu .navbar .nav .nav-item .nav-link{color:#fff}.header_area.white_menu.navbar_fixed .main_menu .navbar .navbar-brand img{display:inline-block}.header_area.white_menu.navbar_fixed .main_menu .navbar .navbar-brand img+img{display:none}.header_area.white_menu.navbar_fixed .main_menu .navbar .nav .nav-item .nav-link{line-height:70px}
+
+.card,
+.card-body,
+.card-title,
+.card-text,
+.list-group-item,
+h1, h2, h3, h4, h5, h6,
+p, span, a, li, label {
+    color: #111 !important; /* Garante texto preto em todos os elementos comuns */
+}
+
+.navbar-brand img {
+    height: 48px !important;
+    width: 48px !important;
+}
+
+.navbar {
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.25rem !important;
+}
+
+.bg-primary .text-white, .bg-primary.text-white, .bg-primary h3, .bg-primary h2, .bg-primary h1 {
+    color: #fff !important;
+}
+
+/* Deixa os botões principais com fundo claro e borda cinza */
+.btn-primary,
+.btn-outline-info,
+.btn-outline-info.text-white {
+    background-color: #fff !important;
+    color: #222 !important;
+    border: 1px solid #bbb !important;
+}
+
+/* Ícones dentro dos botões também escuros */
+.btn-primary i,
+.btn-outline-info i,
+.btn-outline-info.text-white i {
+    color: #222 !important;
+}
