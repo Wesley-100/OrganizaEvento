@@ -1,24 +1,30 @@
 <?php
 $registros = $dados['dados'] ?? [];
 if (count($registros) > 0): ?>
-    <div class="row">
+    <div class="container my-5">
         <?php foreach ($registros as $value): ?>
-            <section class="about section-margin pb-xl-70">
-                <div class="container">
-                    <div class="section-intro mb-lg-4">
-                        <h4 class="intro-title">Quem somos?</h4>
-                        <h5><?= isset($value['titulo']) ? htmlspecialchars($value['titulo']) : '' ?></h5>
-                        <p><?= isset($value['texto']) ? $value['texto'] : '' ?></p>
-                        <?php if (!empty($value['imagem'])): ?>
-                            <img src="<?= baseUrl() . 'imagem.php?file=quemsomos/' . htmlspecialchars($value['imagem']) ?>" alt="Imagem Quem Somos" class="img-fluid" />
-                        <?php endif; ?>
+            <div class="row align-items-center justify-content-center">
+                <div class="col-12 mb-4">
+                    <h4 class="intro-title mb-4" style="font-weight:bold; text-align:left; border-bottom:2px solid #ccc; display:inline-block;">
+                        Quem somos?
+                    </h4>
+                </div>
+                <div class="col-12 col-md-4 text-center mb-4 mb-md-0">
+                    <?php if (!empty($value['imagem'])): ?>
+                        <img src="<?= baseUrl() . 'imagem.php?file=quemsomos/' . htmlspecialchars($value['imagem']) ?>" alt="Imagem Quem Somos" class="img-fluid rounded shadow" style="max-width: 320px; background:#fff; padding:16px;" />
+                    <?php endif; ?>
+                </div>
+                <div class="col-12 col-md-8">
+                    <h2 class="mb-3" style="font-weight:bold;"><?= isset($value['titulo']) ? htmlspecialchars($value['titulo']) : '' ?></h2>
+                    <div class="mb-4" style="font-size:1.1rem;">
+                        <?= isset($value['texto']) ? $value['texto'] : '' ?>
                     </div>
                 </div>
-            </section>
+            </div>
         <?php endforeach; ?>
     </div>
 <?php else: ?>
-    <div class="alert alert-warning mt-5 mb-5" role="alert">
+    <div class="alert alert-warning mt-5 mb-5 text-center" role="alert">
         Não foram localizados registros...
     </div>
 <?php endif; ?>

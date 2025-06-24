@@ -17,8 +17,10 @@ $nivelUsuario = (int)Session::get("userNivel");
         <title>AtomPHP | FASM 2025</title>
 
         <link href="<?= baseUrl() ?>assets/img/AtomPHP-icone.png" rel="icon" type="image/png">
-
+        
+        <link rel="stylesheet" href="<?= baseUrl() ?>/assets/bootstrap/css/style.css">
         <link href="<?= baseUrl() ?>assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        
 
         <!-- Fontawesome -->
         <link href="<?= baseUrl() ?>assets/fontawesome-free-6.7.2-web/css/fontawesome.css" rel="stylesheet" />
