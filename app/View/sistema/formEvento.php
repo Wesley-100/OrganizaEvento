@@ -77,7 +77,7 @@
                 <?php if (in_array($this->request->getAction(), ['insert', 'update'])): ?>
                     <div class="mb-3 col-12">
                         <label for="imagem" class="form-label">Imagem</label>
-                        <input type="file" class="form-control" id="imagem" name="imagem" placeholder="Anexar a Imagem" maxlength="100" value="<?= setValor('imagem') ?>">
+                        <input required type="file" class="form-control" id="imagem" name="imagem" placeholder="Anexar a Imagem" maxlength="100" value="<?= setValor('imagem')  ?>">
                         <?= setMsgFilderError('imagem') ?>
                     </div>
                 <?php endif; ?>
