@@ -1,0 +1,136 @@
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema testeorganizaevento
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema testeorganizaevento
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `testeorganizaevento` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+USE `testeorganizaevento` ;
+
+-- -----------------------------------------------------
+-- Table `testeorganizaevento`.`uf`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testeorganizaevento`.`uf` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `sigla` VARCHAR(2) NOT NULL,
+  `descricao` VARCHAR(50) NOT NULL,
+  `bandeira` VARCHAR(100) NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `sigla` (`sigla` ASC) VISIBLE)
+ENGINE = InnoDB
+AUTO_INCREMENT = 44
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `testeorganizaevento`.`cidade`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testeorganizaevento`.`cidade` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(50) NOT NULL,
+  `uf_id` INT NOT NULL,
+  `codIBGE` VARCHAR(7) NOT NULL,
+  `wiki` MEDIUMTEXT NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE INDEX `nome_uf_id` (`nome` ASC, `uf_id` ASC) VISIBLE,
+  INDEX `FK1_cidade_uf_id` (`uf_id` ASC) VISIBLE,
+  CONSTRAINT `FK1_cidade_uf_id`
+    FOREIGN KEY (`uf_id`)
+    REFERENCES `testeorganizaevento`.`uf` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 196
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `testeorganizaevento`.`eventos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testeorganizaevento`.`eventos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nome` VARCHAR(255) NOT NULL,
+  `wiki` VARCHAR(500) CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci' NULL DEFAULT NULL,
+  `data_inicio` DATETIME NOT NULL,
+  `data_termino` DATETIME NOT NULL,
+  `cidade_id` INT NOT NULL DEFAULT 0,
+  `capacidade` INT NOT NULL,
+  `status` INT NOT NULL DEFAULT '1' COMMENT '1=Ativo; 2=Inativo; 3=Bloqueado;',
+  `created_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` DATETIME NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `imagem` VARCHAR(100) NOT NULL DEFAULT '',
+  PRIMARY KEY (`id`),
+  INDEX `FK1_cidade_id` (`cidade_id` ASC) VISIBLE,
+  CONSTRAINT `FK1_cidade_id`
+    FOREIGN KEY (`cidade_id`)
+    REFERENCES `testeorganizaevento`.`cidade` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 8
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+-- -----------------------------------------------------
+-- Table `testeorganizaevento`.`quemsomos`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testeorganizaevento`.`quemsomos` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `titulo` VARCHAR(50) NOT NULL,
+  `texto` TEXT NOT NULL,
+  `imagem` VARCHAR(100) CHARACTER SET 'latin1' NULL DEFAULT '',
+  `status` INT NOT NULL DEFAULT '1' COMMENT '1=Ativo; 2=Inativo',
+  PRIMARY KEY (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `testeorganizaevento`.`usuario`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testeorganizaevento`.`usuario` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `nivel` INT NOT NULL DEFAULT '2' COMMENT '1=Super Administrador; 11=Administador; 21=Usuário',
+  `nome` VARCHAR(60) CHARACTER SET 'latin1' NOT NULL,
+  `email` VARCHAR(150) CHARACTER SET 'latin1' NOT NULL,
+  `senha` VARCHAR(250) CHARACTER SET 'latin1' NOT NULL,
+  `statusRegistro` INT NOT NULL DEFAULT '1' COMMENT '1=Ativo; 2=Inativo; 3=Bloqueado;',
+  PRIMARY KEY USING BTREE (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 8
+DEFAULT CHARACTER SET = latin1;
+
+
+-- -----------------------------------------------------
+-- Table `testeorganizaevento`.`usuariorecuperasenha`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `testeorganizaevento`.`usuariorecuperasenha` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `usuario_id` INT NOT NULL,
+  `chave` VARCHAR(250) CHARACTER SET 'utf8mb4' COLLATE 'utf8mb4_0900_ai_ci' NOT NULL,
+  `statusRegistro` INT NOT NULL DEFAULT '1' COMMENT '1=Ativo;2=Inativo',
+  `created_at` DATETIME NOT NULL,
+  `updated_at` DATETIME NULL DEFAULT NULL,
+  PRIMARY KEY USING BTREE (`id`),
+  UNIQUE INDEX `chave` USING BTREE (`chave`) VISIBLE,
+  INDEX `FK1_usuariorecuperacaosenha` USING BTREE (`usuario_id`) VISIBLE,
+  CONSTRAINT `FK1_usuariorecuperacaosenha`
+    FOREIGN KEY (`usuario_id`)
+    REFERENCES `testeorganizaevento`.`usuario` (`id`))
+ENGINE = InnoDB
+AUTO_INCREMENT = 5
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
