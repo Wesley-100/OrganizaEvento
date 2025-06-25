@@ -32,7 +32,8 @@ $nivelUsuario = (int)Session::get("userNivel");
         <link href="<?= baseUrl() ?>assets/fontawesome-free-6.7.2-web/css/sharp-duotone-thin.css" rel="stylesheet" />
         <!-- Fontawesome -->
 
-        <link href="https://fonts.googleapis.com/css?family=Poppins:400,600&display=swap" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:700,600,500&display=swap" rel="stylesheet">
 
         <script src="<?= baseUrl() ?>assets/js/jquery-3.5.1.min.js"></script>
         <script src="<?= baseUrl() ?>assets/bootstrap/js/bootstrap.bundle.min.js"></script>

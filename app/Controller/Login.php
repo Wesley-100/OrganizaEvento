@@ -58,6 +58,16 @@ class Login extends ControllerMain
                 ]);
             }
 
+            // Se for nível 21, loga e vai para home
+            if ($aUser['nivel'] == 21) {
+                Session::set("userId"   , $aUser['id']);
+                Session::set("userNome" , $aUser['nome']);
+                Session::set("userEmail", $aUser['email']);
+                Session::set("userNivel", $aUser['nivel']);
+                Session::set("userSenha", $aUser['senha']);
+                return Redirect::page("home");
+            }
+
             //  Criar flag's de usuário logado no sistema
             
             Session::set("userId"   , $aUser['id']);
