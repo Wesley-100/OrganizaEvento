@@ -1,6 +1,6 @@
 body {
     background-color: #f4f6f9; /* Suave para o fundo */
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif !important;
     color: #111 !important; /* Deixa o texto preto */
     padding: 15px; /* Ajuste de espaçamento global */
     margin: 0px;
@@ -342,6 +342,12 @@ p, span, a, li, label {
     color: #007bff;
     text-decoration: underline;
     font-weight: 500;
+}
+
+.logo-titulo, .titulo-montserrat, h2.logo-titulo {
+    font-family: 'Montserrat', Arial, sans-serif !important;
+    font-weight: 700;
+    letter-spacing: 1px;
 }
 
 @media (max-width: 991px) {

@@ -5,7 +5,7 @@ $eventosAtivos = array_filter($registros, fn($v) => $v['status'] == 1);
 ?>
 
 <div class="mt-4 mb-4">
-    <h2>Bem-vindo ao OrganizaEvento!</h2>
+    <h2>Bem-vindo ao <h2 class="logo-titulo">OrganizaEvento!</h2></h2>
     <p class="lead">Confira abaixo os eventos que acontecerão nos próximos dias. Aproveite para participar e ficar por dentro das novidades!</p>
 </div>
 
