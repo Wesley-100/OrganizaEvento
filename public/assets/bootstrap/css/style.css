@@ -350,6 +350,18 @@ p, span, a, li, label {
     letter-spacing: 1px;
 }
 
+.navbar-nav {
+    justify-content: flex-end !important;
+}
+
+.navbar-nav .nav-link {
+    text-align: right !important;
+}
+.navbar .navbar-nav {
+    margin-left: auto !important;
+    margin-right: 200px !important;
+}
+
 @media (max-width: 991px) {
     .fale-form-box, .fale-info-box {
         margin-bottom: 18px;

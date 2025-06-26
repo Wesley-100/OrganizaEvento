@@ -1,5 +1,5 @@
 <?php
-$registros = $dados['dados'] ?? [];
+$registros = $dados['dados'] ?? ['first' => ''];
 if (count($registros) > 0): ?>
     <div class="container my-5">
         <?php foreach ($registros as $value): ?>
