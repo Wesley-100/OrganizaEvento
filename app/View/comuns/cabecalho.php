@@ -57,7 +57,7 @@ $nivelUsuario = (int)Session::get("userNivel");
                             <a class="nav-link" href="<?= baseUrl() ?>home/quemsomos">Quem Somos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="<?= baseUrl() ?>home/produtos">Produtos/Serviços</a>
+                            <a class="nav-link" href="<?= baseUrl() ?>home/produtos">Eventos</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="<?= baseUrl() ?>faleconosco">Fale Conosco</a>
@@ -79,9 +79,11 @@ $nivelUsuario = (int)Session::get("userNivel");
                                     <?php if($nivelUsuario <= 20): ?>
                                     <li><hr class="dropdown-divider"></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>uf">UF's</a></li>
-                                    <li><a class="dropdown-item" href="<?= baseUrl() ?>quemsomos">Quem Somos</a></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>cidade">Cidade</a></li>
                                     <li><a class="dropdown-item" href="<?= baseUrl() ?>evento">Eventos</a></li>
+                                    <?php endif; ?>
+                                    <?php if ($nivelUsuario <= 10): ?>
+                                    <li><a class="dropdown-item" href="<?= baseUrl() ?>quemsomos">Quem Somos</a></li>
                                     <?php endif; ?>
                                 </ul>
                             </li>
@@ -89,7 +91,7 @@ $nivelUsuario = (int)Session::get("userNivel");
                         <?php else: ?>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="<?= baseUrl() ?>Login">Área restrita</a>
+                                <a class="nav-link" href="<?= baseUrl() ?>Login">Login</a>
                             </li>
 
                         <?php endif; ?>
